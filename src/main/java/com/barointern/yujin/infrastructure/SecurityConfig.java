@@ -22,11 +22,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @RequiredArgsConstructor
 public class SecurityConfig {
 
-  private final String[] permitPaths = {
-      "/v1/auth/signup",
-      "/v1/auth/signin",
-  };
-
   private final JwtAuthenticationFilter jwtAuthenticationFilter;
   private final AuthenticationFilter authenticationFilter;
 
@@ -49,7 +44,8 @@ public class SecurityConfig {
         .httpBasic(AbstractHttpConfigurer::disable)
         .sessionManagement(session -> session.sessionCreationPolicy(STATELESS))
         .authorizeHttpRequests(auth -> {
-          auth.requestMatchers(permitPaths).permitAll(); // 허용
+          auth.requestMatchers("/v1/auth/**", "/swagger-ui/**", "/v3/api-docs/**")
+              .permitAll(); // 허용
           auth.anyRequest().authenticated();
         })
         .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
