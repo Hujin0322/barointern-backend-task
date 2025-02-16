@@ -1,8 +1,11 @@
 package com.barointern.yujin.presentation.controller;
 
 import com.barointern.yujin.application.service.AuthService;
+import com.barointern.yujin.presentation.request.SignInRequest;
 import com.barointern.yujin.presentation.request.SignUpRequest;
+import com.barointern.yujin.presentation.response.SignInResponse;
 import com.barointern.yujin.presentation.response.SignUpResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,9 +28,12 @@ public class AuthController {
     return authService.signUp(signUpRequest);
   }
 
-  /*
-  TODO: 로그인 API 생성
+  // 로그인
   @PostMapping("/signin")
-   */
+  public SignInResponse signIn(@Valid @RequestBody SignInRequest signInRequest,
+      HttpServletResponse response) {
+    String accessToken = authService.signIn(signInRequest.username(), signInRequest.password(), response);
+    return new SignInResponse(accessToken);
+  }
 
 }
