@@ -1,7 +1,9 @@
-package com.barointern.yujin.infrastructure;
+package com.barointern.yujin.infrastructure.config;
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
+import com.barointern.yujin.infrastructure.jwt.AuthenticationFilter;
+import com.barointern.yujin.infrastructure.jwt.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
