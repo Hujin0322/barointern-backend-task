@@ -1,5 +1,6 @@
-package com.barointern.yujin.infrastructure;
+package com.barointern.yujin.infrastructure.jwt;
 
+import com.barointern.yujin.infrastructure.security.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

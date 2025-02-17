@@ -3,7 +3,7 @@ package com.barointern.yujin.application.service;
 import com.barointern.yujin.domain.model.RoleType;
 import com.barointern.yujin.domain.model.User;
 import com.barointern.yujin.domain.repository.AuthRepository;
-import com.barointern.yujin.infrastructure.JwtUtil;
+import com.barointern.yujin.infrastructure.jwt.JwtUtil;
 import com.barointern.yujin.presentation.exception.AuthException;
 import com.barointern.yujin.presentation.exception.ErrorCode;
 import com.barointern.yujin.presentation.request.SignUpRequest;

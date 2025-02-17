@@ -1,4 +1,4 @@
-package com.barointern.yujin.infrastructure;
+package com.barointern.yujin.infrastructure.jwt;
 
 import com.barointern.yujin.presentation.exception.AuthException;
 import com.barointern.yujin.presentation.exception.ErrorCode;
