@@ -1,4 +1,4 @@
-package com.barointern.yujin.infrastructure;
+package com.barointern.yujin.infrastructure.security;
 
 import com.barointern.yujin.domain.model.User;
 import com.barointern.yujin.domain.repository.AuthRepository;
